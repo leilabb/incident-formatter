@@ -1,46 +1,6 @@
 import { useState } from "react";
 
-export default function Form() {
-  const [formData, setFormData] = useState({
-    type: "",
-    zone: "",
-    affected: "",
-    gpon: { f: 0, s: 0, p: 0 },
-    date: "",
-    time: "",
-    coordinates: { x: "", y: "" },
-    adress: "",
-    serialNumber: "",
-    ticketUrl: "",
-  });
-
-  function handleChange(event) {
-    const { value, name } = event.target;
-    if (name === "f" || name === "s" || name === "p") {
-      setFormData((prev) => ({
-        ...prev,
-        gpon: {
-          ...prev.gpon,
-          [name]: value,
-        },
-      }));
-    } else if (name === "x" || name === "y") {
-      setFormData((prev) => ({
-        ...prev,
-        coordinates: {
-          ...prev.coordinates,
-          [name]: value,
-        },
-      }));
-    } else {
-      setFormData((prev) => ({
-        ...prev,
-        [name]: value,
-      }));
-      console.log(JSON.stringify(formData, null, 2));
-    }
-  }
-
+export default function Form({ formData, handleChange }) {
   return (
     <div className="">
       {/*  Radio buttons F1, D2, C3  */}
@@ -110,6 +70,8 @@ export default function Form() {
           <option value="MALAGA">MALAGA</option>
           <option value="ALGECIRAS">ALGECIRAS</option>
           <option value="FUENGIROLA">FUENGIROLA</option>
+          <option value="HUELVA">HUELVA</option>
+          <option value="CHICLANA">CHICLANA</option>
         </select>
       </div>
 
