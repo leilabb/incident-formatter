@@ -253,7 +253,7 @@ export default function Form({ formData, handleChange }) {
         </div>
       </div>
       {/* <!-- Tarea --> */}
-      {/* <div className="">
+      <div className="flex flex-col">
         <label
           for="tarea"
           className="text-left block text-sm font-medium text-gray-700 mb-2"
@@ -268,9 +268,15 @@ export default function Form({ formData, handleChange }) {
           onChange={(event) => {
             handleChange(event);
           }}
-          className="px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none"
+          className="w-80 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none"
         ></textarea>
-      </div> */}
+        <button
+          id="format-btn"
+          className="bg-black w-fit mt-2 w-1/4 text-white font-medium py-3 px-4 rounded-md"
+        >
+          Enviar a chat de Averías
+        </button>
+      </div>
     </div>
   );
 }
