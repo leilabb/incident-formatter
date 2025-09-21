@@ -10,7 +10,7 @@ Fecha y hora: ${formData.date}, ${formData.time}
 Coordenadas: ${formData.coordinates.x}, ${formData.coordinates.y}
 Dirección: ${formData.adress}
 SN: ${formData.serialNumber}
-Tarea: ${formData.ticketUrl}`;
+`;
 
     navigator.clipboard.writeText(formDataToCopy);
 
@@ -19,10 +19,12 @@ Tarea: ${formData.ticketUrl}`;
 
   return (
     <div className="">
-      <div className="border rounded-xs p-10 ">
+      <div className="border rounded-xl p-10 ">
         <h2>
-          LOS {formData.type} ROJO - ZONA {formData.zone}
-          {""} {formData.affected} CLIENTES AFECTADOS
+          LOS <span className="font-bold">{formData.type}</span> ROJO - ZONA{" "}
+          <span className="font-bold">{formData.zone}</span>
+          {""} <span className="font-bold"> {formData.affected} </span>CLIENTES
+          AFECTADOS
         </h2>
 
         <div>
@@ -37,19 +39,19 @@ Tarea: ${formData.ticketUrl}`;
           </p>
           <p>Dirección: {formData.adress}</p>
           <p>SN: {formData.serialNumber}</p>
-          <p>
+          {/* <p>
             Tarea:{" "}
             <a href={formData.ticketUrl} target="_blank">
               {formData.ticketUrl}
             </a>
-          </p>
+          </p> */}
         </div>
       </div>
       <button
         id="format-btn"
         className={`${
           copied ? "bg-green-600" : "bg-black"
-        } w-full text-white font-medium py-3 px-4 rounded-md`}
+        } mt-2 w-1/4 text-white font-medium py-3 px-4 rounded-md`}
         onClick={() => !copied && copyNumber()}
       >
         {copied ? "Copiado!" : "Copiar"}

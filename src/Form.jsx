@@ -12,7 +12,7 @@ export default function Form({ formData, handleChange }) {
   return (
     <div className="">
       {/*  Radio buttons D2, C3  */}
-      <div className="flex mb-6 space-x-16">
+      <div className="flex mb-6 space-x-26">
         <div className="flex flex-col">
           <label className="text-left block text-sm font-medium text-gray-700 mb-2">
             Tipo
@@ -65,7 +65,7 @@ export default function Form({ formData, handleChange }) {
         </div>
       </div>
 
-      <div className=" flex justify-items-start space-x-18">
+      <div className=" flex justify-items-start space-x-12">
         {/*  Zona dropdown --> */}
         <div
           className="mb-6"
@@ -77,7 +77,10 @@ export default function Form({ formData, handleChange }) {
             for="zone"
             className="block text-left text-sm font-medium text-gray-700 mb-2"
           >
-            Zona
+            Zona{" "}
+            <a href="https://maps.google.com/" target="_blank">
+              <span className="text-xs">Mapa</span>
+            </a>
           </label>
           <select
             id="zone"
@@ -117,7 +120,7 @@ export default function Form({ formData, handleChange }) {
       </div>
 
       {/* <!-- Puertos --> */}
-      <div className="flex flex-row space-x-18 mb-6">
+      <div className="flex flex-row space-x-14 mb-6">
         {/* <!-- Fecha y hora--> */}
         <div className="flex flex-col">
           <label
@@ -153,7 +156,7 @@ export default function Form({ formData, handleChange }) {
         </div>
       </div>
 
-      <div className="mb-6 flex space-x-24">
+      <div className="mb-6 flex space-x-12">
         <div className="flex flex-col">
           <label className="text-left block text-sm font-medium text-gray-700 mb-2">
             Puertos
@@ -197,9 +200,12 @@ export default function Form({ formData, handleChange }) {
 
         <div className="flex flex-col">
           <label className="text-left block text-sm font-medium text-gray-700 mb-2">
-            Coordenadas
+            Coordenadas{" "}
+            <a href="https://www.userside.eu/en" target="_blank">
+              <span className="text-xs">Userside</span>
+            </a>
           </label>
-          <div className="flex w-24 space-x-2">
+          <div className="flex w-44 space-x-2">
             <input
               name="x"
               type="text"
@@ -226,7 +232,7 @@ export default function Form({ formData, handleChange }) {
       </div>
 
       {/* <!-- S/N --> */}
-      <div className="mb-6 flex space-x-12">
+      <div className="mb-6 flex space-x-6">
         <div className="flex flex-col">
           <label
             for="sn"
@@ -245,25 +251,25 @@ export default function Form({ formData, handleChange }) {
             className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
-        {/* <!-- Tarea --> */}
-        <div className="">
-          <label
-            for="tarea"
-            className="text-left block text-sm font-medium text-gray-700 mb-2"
-          >
-            Tarea
-          </label>
-          <textarea
-            name="ticketUrl"
-            id="tarea"
-            rows="1"
-            placeholder="Enlace tarea"
-            onChange={(event) => {
-              handleChange(event);
-            }}
-            className="px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none"
-          ></textarea>
-        </div>
+      </div>
+      {/* <!-- Tarea --> */}
+      <div className="">
+        <label
+          for="tarea"
+          className="text-left block text-sm font-medium text-gray-700 mb-2"
+        >
+          Tarea
+        </label>
+        <textarea
+          name="ticketUrl"
+          id="tarea"
+          rows="1"
+          placeholder="Enlace tarea"
+          onChange={(event) => {
+            handleChange(event);
+          }}
+          className="px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none"
+        ></textarea>
       </div>
     </div>
   );
