@@ -8,9 +8,9 @@ export default function App() {
     type: "",
     zone: "",
     affected: "",
-    gpon: { f: 0, s: 0, p: 0 },
-    date: "",
-    time: "",
+    gpon: "",
+    fsp: { f: 0, s: 0, p: 0 },
+    dateTime: "",
     coordinates: { x: "", y: "" },
     adress: "",
     serialNumber: "",
@@ -22,8 +22,8 @@ export default function App() {
     if (name === "f" || name === "s" || name === "p") {
       setFormData((prev) => ({
         ...prev,
-        gpon: {
-          ...prev.gpon,
+        fsp: {
+          ...prev.fsp,
           [name]: value,
         },
       }));
@@ -45,7 +45,7 @@ export default function App() {
   }
 
   return (
-    <div className="w-full flex justify-between space-x-10">
+    <div className="w-full flex justify-between">
       <div className="w-1/2">
         <Form formData={formData} handleChange={handleChange} />
       </div>

@@ -4,9 +4,9 @@ export default function Output({ formData }) {
   const [copied, setCopied] = useState(false);
 
   function copyNumber() {
-    const formDataToCopy = `LOS ${formData.type} ROJO - ZONA ${formData.zone} ${formData.affected} CLIENTES AFECTADOS
-Puertos: ${formData.gpon.f} / ${formData.gpon.s} / ${formData.gpon.p}
-Fecha y hora: ${formData.date}, ${formData.time}
+    const formDataToCopy = `LOS ROJO ${formData.type} ${formData.gpon} -  ZONA ${formData.zone} ${formData.affected} CLIENTES AFECTADOS
+Puertos: ${formData.fsp.f} / ${formData.fsp.s} / ${formData.fsp.p}
+Fecha y hora: ${formData.dateTime},
 Coordenadas: ${formData.coordinates.x}, ${formData.coordinates.y}
 Dirección: ${formData.adress}
 SN: ${formData.serialNumber}
@@ -21,7 +21,8 @@ SN: ${formData.serialNumber}
     <div className="">
       <div className="border rounded-xl p-10 ">
         <h2>
-          LOS <span className="font-bold">{formData.type}</span> ROJO - ZONA{" "}
+          LOS ROJO <span className="font-bold">{formData.type}</span> -
+          <span className="font-bold">{formData.gpon} </span>ZONA{" "}
           <span className="font-bold">{formData.zone}</span>
           {""} <span className="font-bold"> {formData.affected} </span>CLIENTES
           AFECTADOS
@@ -29,11 +30,9 @@ SN: ${formData.serialNumber}
 
         <div>
           <p>
-            Puertos: {formData.gpon.f} / {formData.gpon.s} / {formData.gpon.p}
+            Puertos: {formData.fsp.f} / {formData.fsp.s} / {formData.fsp.p}
           </p>
-          <p>
-            Fecha y hora: {formData.date}, {formData.time}
-          </p>
+          <p>Fecha y hora: {formData.dateTime}</p>
           <p>
             Coordenadas: {formData.coordinates.x}, {formData.coordinates.y}
           </p>

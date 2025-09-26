@@ -11,9 +11,9 @@ export default function Form({ formData, handleChange }) {
 
   return (
     <div className="">
-      {/*  Radio buttons D2, C3  */}
-      <div className="flex mb-6 space-x-26">
-        <div className="flex flex-col">
+      {/*  Tipo & clientes afectados */}
+      <div className="flex mb-6 md:w-full md:gap-6">
+        <div className="flex flex-col ">
           <label className="text-left block text-sm font-medium text-gray-700 mb-2">
             Tipo
           </label>
@@ -23,7 +23,7 @@ export default function Form({ formData, handleChange }) {
             }}
             className="flex px-3 py-2 border border-gray-300 rounded-md shadow-sm"
           >
-            <label className="space-x-2 flex flex-row items-center">
+            <label className=" flex flex-row items-center">
               {tipos.map((tipo) => {
                 return (
                   <div>
@@ -42,7 +42,6 @@ export default function Form({ formData, handleChange }) {
           </div>
         </div>
 
-        {/* <!-- Clientes afectados --> */}
         <div
           onChange={(event) => {
             handleChange(event);
@@ -60,13 +59,13 @@ export default function Form({ formData, handleChange }) {
             id="affected"
             min="0"
             placeholder="N de clientes"
-            className="w-42 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="md:w-fit px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
       </div>
 
-      <div className=" flex justify-items-start space-x-12">
-        {/*  Zona dropdown --> */}
+      {/*  Zona & GPON */}
+      <div className=" flex justify-items-start gap-6 w-full">
         <div
           className="mb-6"
           onChange={(event) => {
@@ -85,7 +84,7 @@ export default function Form({ formData, handleChange }) {
           <select
             id="zone"
             name="zone"
-            className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className=" px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           >
             <option value="">Seleccionar zona</option>
             {zones.map((zone) => {
@@ -98,8 +97,39 @@ export default function Form({ formData, handleChange }) {
           </select>
         </div>
 
-        {/* Dirección */}
-        <div className="">
+        <div className="flex flex-col">
+          <label className="text-left text-sm font-medium text-gray-700 mb-2">
+            GPON{" "}
+          </label>
+          <input
+            name="gpon"
+            type="text"
+            id="gpon"
+            onChange={(event) => {
+              handleChange(event);
+            }}
+            className="px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          />
+        </div>
+      </div>
+
+      {/*  Dirección y fecha/hora */}
+      <div className="flex flex-row mb-6 md:gap-6">
+        <div className="flex flex-col">
+          <label className="text-left text-sm font-medium text-gray-700 mb-2">
+            Fecha y hora
+          </label>
+          <input
+            name="dateTime"
+            type="text"
+            id="fecha"
+            onChange={(event) => {
+              handleChange(event);
+            }}
+            className="px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          />
+        </div>
+        <div className="flex flex-col">
           <label
             for="direccion"
             className="text-left block text-sm font-medium text-gray-700 mb-2"
@@ -114,54 +144,18 @@ export default function Form({ formData, handleChange }) {
             onChange={(event) => {
               handleChange(event);
             }}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-          />
-        </div>
-      </div>
-
-      {/* <!-- Puertos --> */}
-      <div className="flex flex-row space-x-14 mb-6">
-        {/* <!-- Fecha y hora--> */}
-        <div className="flex flex-col">
-          <label
-            for="fecha"
-            className="text-left text-sm font-medium text-gray-700 mb-2"
-          >
-            Fecha
-          </label>
-          <input
-            name="date"
-            type="date"
-            id="fecha"
-            onChange={(event) => {
-              handleChange(event);
-            }}
-            className="px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-          />
-        </div>
-
-        <div className="flex flex-col">
-          <label className="text-left text-sm font-medium text-gray-700 mb-2">
-            Hora
-          </label>
-          <input
-            name="time"
-            type="time"
-            id="fecha"
-            onChange={(event) => {
-              handleChange(event);
-            }}
             className=" px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
       </div>
 
-      <div className="mb-6 flex space-x-12">
-        <div className="flex flex-col">
+      {/* Puertos y coordenadas */}
+      <div className="mb-6 flex gap-6">
+        <div className="flex flex-col flex-1 space-x-2">
           <label className="text-left block text-sm font-medium text-gray-700 mb-2">
             Puertos
           </label>
-          <div className="flex w-44 space-x-2">
+          <div className="flex">
             <input
               name="f"
               type="text"
@@ -170,7 +164,7 @@ export default function Form({ formData, handleChange }) {
               onChange={(event) => {
                 handleChange(event);
               }}
-              className="w-1/3 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="md:w-1/5 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             />
             <span className="flex items-center text-gray-500">/</span>
             <input
@@ -181,7 +175,7 @@ export default function Form({ formData, handleChange }) {
               onChange={(event) => {
                 handleChange(event);
               }}
-              className="w-1/3 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="md:w-1/5 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             />
             <span className="flex items-center text-gray-500">/</span>
             <input
@@ -192,20 +186,19 @@ export default function Form({ formData, handleChange }) {
               onChange={(event) => {
                 handleChange(event);
               }}
-              className="w-1/3 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="md:w-1/5 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
         </div>
-        {/* Coordenadas */}
 
-        <div className="flex flex-col">
+        <div className="flex flex-col flex-1">
           <label className="text-left block text-sm font-medium text-gray-700 mb-2">
             Coordenadas{" "}
             <a href="https://www.userside.eu/en" target="_blank">
               <span className="text-xs">Userside</span>
             </a>
           </label>
-          <div className="flex w-44 space-x-2">
+          <div className="flex ">
             <input
               name="x"
               type="text"
@@ -214,7 +207,7 @@ export default function Form({ formData, handleChange }) {
               onChange={(event) => {
                 handleChange(event);
               }}
-              className="w-1/3 flex-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className=" md:w-1/3 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             />
             <span className="flex items-center text-gray-500">,</span>
             <input
@@ -225,7 +218,7 @@ export default function Form({ formData, handleChange }) {
               onChange={(event) => {
                 handleChange(event);
               }}
-              className="w-1/3 flex-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="md:w-1/3  px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
         </div>
@@ -248,12 +241,12 @@ export default function Form({ formData, handleChange }) {
             onChange={(event) => {
               handleChange(event);
             }}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className=" px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
       </div>
       {/* <!-- Tarea --> */}
-      <div className="flex flex-col">
+      {/* <div className="flex flex-col">
         <label
           for="tarea"
           className="text-left block text-sm font-medium text-gray-700 mb-2"
@@ -272,11 +265,11 @@ export default function Form({ formData, handleChange }) {
         ></textarea>
         <button
           id="format-btn"
-          className="bg-black w-fit mt-2 w-1/4 text-white font-medium py-3 px-4 rounded-md"
+          className="bg-black w-fit mt-2 text-white font-medium py-3 px-4 rounded-md"
         >
           Enviar a chat de Averías
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }
