@@ -9,15 +9,15 @@ export default function Form({ formData, handleChange }) {
     "FUENGIROLA",
     "HUELVA",
   ];
-  const tipos = ["D2", "C3"];
+  const tipos = ["F1","D2", "C3"];
 
-  //const [f1Selected, setf1Selected] = useState(True)
+  const [f1Selected, setf1Selected] = useState(True)
 
   return (
     <div className="">
       {/*  Tipo & clientes afectados */}
       <div className="flex mb-6 md:w-full md:gap-6">
-        <div className="flex flex-col w-fit ">
+        {/* <div className="flex flex-col w-fit ">
           <label className="text-left block text-sm font-medium text-gray-700 mb-2">
             Tipo
           </label>
@@ -44,12 +44,12 @@ export default function Form({ formData, handleChange }) {
               })}
             </label>
           </div>
-        </div>
+        </div> */}
         <div
           onChange={(event) => {
             handleChange(event);
           }}
-          className="md:ml-14"
+          className="md:ml-3"
           
           
         >

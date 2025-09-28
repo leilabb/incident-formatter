@@ -6,7 +6,7 @@ import Footer from "./Footer.jsx";
 
 export default function App() {
   const [formData, setFormData] = useState({
-    type: "",
+    type: "f1",
     zone: "",
     affected: "",
     gpon: "",
@@ -15,6 +15,7 @@ export default function App() {
     coordinates: { x: "", y: "" },
     adress: "",
     serialNumber: "",
+    telefono:"",
     ticketUrl: "",
   });
 
@@ -45,11 +46,11 @@ export default function App() {
     }
   }
 
-
   return (
-      <div>
+    <div>
       <div className="max-w-[1280px] mx-auto p-8 my-12">
         <div className="w-full flex justify-between">
+          {" "}
           <div className="w-1/2">
             <Form formData={formData} handleChange={handleChange} />
           </div>
@@ -58,7 +59,7 @@ export default function App() {
           </div>
         </div>
       </div>
-              <Footer />
-</div>
+      <Footer />
+    </div>
   );
 }

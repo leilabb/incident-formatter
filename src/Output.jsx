@@ -38,12 +38,6 @@ SN: ${formData.serialNumber}
           </p>
           <p>Dirección: {formData.adress}</p>
           <p>SN: {formData.serialNumber}</p>
-          {/* <p>
-            Tarea:{" "}
-            <a href={formData.ticketUrl} target="_blank">
-              {formData.ticketUrl}
-            </a>
-          </p> */}
         </div>
       </div>
       <button
