@@ -13,7 +13,7 @@ export default function Form({ formData, handleChange }) {
     <div className="">
       {/*  Tipo & clientes afectados */}
       <div className="flex mb-6 md:w-full md:gap-6">
-        <div className="flex flex-col ">
+        <div className="flex flex-col w-fit ">
           <label className="text-left block text-sm font-medium text-gray-700 mb-2">
             Tipo
           </label>
@@ -41,14 +41,15 @@ export default function Form({ formData, handleChange }) {
             </label>
           </div>
         </div>
-
         <div
           onChange={(event) => {
             handleChange(event);
           }}
+          className="md:ml-18"
+          
+          
         >
           <label
-            for="clientes"
             className="text-left block text-sm font-medium text-gray-700 mb-2"
           >
             Clientes afectados
@@ -59,13 +60,14 @@ export default function Form({ formData, handleChange }) {
             id="affected"
             min="0"
             placeholder="N de clientes"
-            className="md:w-fit px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="md:w-fit  px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
+       
       </div>
 
       {/*  Zona & GPON */}
-      <div className=" flex justify-items-start gap-6 w-full">
+      <div className=" flex gap-6 w-full">
         <div
           className="mb-6"
           onChange={(event) => {
@@ -84,9 +86,9 @@ export default function Form({ formData, handleChange }) {
           <select
             id="zone"
             name="zone"
-            className=" px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="md:w-46 px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           >
-            <option value="">Seleccionar zona</option>
+            <option value="" className="text-center">Seleccionar zona</option>
             {zones.map((zone) => {
               return (
                 <option key={zone} value={zone}>
@@ -114,8 +116,8 @@ export default function Form({ formData, handleChange }) {
       </div>
 
       {/*  Dirección y fecha/hora */}
-      <div className="flex flex-row mb-6 md:gap-6">
-        <div className="flex flex-col">
+      <div className="flex flex-row mb-6 ">
+        <div className=" md:w-46 flex flex-col">
           <label className="text-left text-sm font-medium text-gray-700 mb-2">
             Fecha y hora
           </label>
@@ -126,13 +128,13 @@ export default function Form({ formData, handleChange }) {
             onChange={(event) => {
               handleChange(event);
             }}
-            className="px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className=" px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
-        <div className="flex flex-col">
+        <div className="md:ml-6 flex flex-col">
           <label
             for="direccion"
-            className="text-left block text-sm font-medium text-gray-700 mb-2"
+            className=" text-left block text-sm font-medium text-gray-700 mb-2"
           >
             Dirección
           </label>
@@ -144,14 +146,14 @@ export default function Form({ formData, handleChange }) {
             onChange={(event) => {
               handleChange(event);
             }}
-            className=" px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
       </div>
 
       {/* Puertos y coordenadas */}
-      <div className="mb-6 flex gap-6">
-        <div className="flex flex-col flex-1 space-x-2">
+      <div className="mb-6 flex ">
+        <div className="flex flex-col ">
           <label className="text-left block text-sm font-medium text-gray-700 mb-2">
             Puertos
           </label>
@@ -164,7 +166,7 @@ export default function Form({ formData, handleChange }) {
               onChange={(event) => {
                 handleChange(event);
               }}
-              className="md:w-1/5 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="md:w-12 mr-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             />
             <span className="flex items-center text-gray-500">/</span>
             <input
@@ -175,7 +177,7 @@ export default function Form({ formData, handleChange }) {
               onChange={(event) => {
                 handleChange(event);
               }}
-              className="md:w-1/5 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="md:w-12 mr-1 ml-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             />
             <span className="flex items-center text-gray-500">/</span>
             <input
@@ -186,12 +188,12 @@ export default function Form({ formData, handleChange }) {
               onChange={(event) => {
                 handleChange(event);
               }}
-              className="md:w-1/5 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="md:w-12 px-3 ml-1 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
         </div>
 
-        <div className="flex flex-col flex-1">
+        <div className="md:ml-10 flex flex-col">
           <label className="text-left block text-sm font-medium text-gray-700 mb-2">
             Coordenadas{" "}
             <a href="https://www.userside.eu/en" target="_blank">
@@ -207,7 +209,7 @@ export default function Form({ formData, handleChange }) {
               onChange={(event) => {
                 handleChange(event);
               }}
-              className=" md:w-1/3 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className=" md:w-24 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             />
             <span className="flex items-center text-gray-500">,</span>
             <input
@@ -218,7 +220,7 @@ export default function Form({ formData, handleChange }) {
               onChange={(event) => {
                 handleChange(event);
               }}
-              className="md:w-1/3  px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="md:w-24 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
         </div>
