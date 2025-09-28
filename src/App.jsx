@@ -2,6 +2,7 @@ import "./App.css";
 import Form from "./Form.jsx";
 import Output from "./Output.jsx";
 import { useState } from "react";
+import Footer from "./Footer.jsx";
 
 export default function App() {
   const [formData, setFormData] = useState({
@@ -44,14 +45,20 @@ export default function App() {
     }
   }
 
+
   return (
-    <div className="w-full flex justify-between">
-      <div className="w-1/2">
-        <Form formData={formData} handleChange={handleChange} />
+      <div>
+      <div className="max-w-[1280px] mx-auto p-8 my-12">
+        <div className="w-full flex justify-between">
+          <div className="w-1/2">
+            <Form formData={formData} handleChange={handleChange} />
+          </div>
+          <div className="w-1/2">
+            <Output formData={formData} />
+          </div>
+        </div>
       </div>
-      <div className="w-1/2">
-        <Output formData={formData} />
-      </div>
-    </div>
+              <Footer />
+</div>
   );
 }

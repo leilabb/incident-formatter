@@ -23,7 +23,7 @@ export default function Form({ formData, handleChange }) {
             }}
             className="flex px-3 py-2 border border-gray-300 rounded-md shadow-sm"
           >
-            <label className=" flex flex-row items-center">
+            <label className="flex flex-row items-center">
               {tipos.map((tipo) => {
                 return (
                   <div>
@@ -32,7 +32,7 @@ export default function Form({ formData, handleChange }) {
                       type="radio"
                       name="type"
                       value={tipo}
-                      className="ml-2 text-blue-600 focus:ring-blue-500"
+                      className="mx-2 text-blue-600 focus:ring-blue-500"
                       id={tipo}
                     />
                   </div>
@@ -45,7 +45,7 @@ export default function Form({ formData, handleChange }) {
           onChange={(event) => {
             handleChange(event);
           }}
-          className="md:ml-18"
+          className="md:ml-14"
           
           
         >
@@ -60,7 +60,7 @@ export default function Form({ formData, handleChange }) {
             id="affected"
             min="0"
             placeholder="N de clientes"
-            className="md:w-fit  px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="md:w-fit px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
        
