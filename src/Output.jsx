@@ -5,9 +5,9 @@ export default function Output({ formData }) {
 
   function copyNumber() {
     const formDataToCopy = `LOS ROJO ${formData.type} ${formData.gpon} -  ZONA ${formData.zone} ${formData.affected} CLIENTES AFECTADOS
-Puertos: ${formData.fsp.f} / ${formData.fsp.s} / ${formData.fsp.p}
+Puertos: ${formData.ports},
 Fecha y hora: ${formData.dateTime},
-Coordenadas: ${formData.coordinates.x}, ${formData.coordinates.y}
+Coordenadas: ${formData.coordinates}, 
 Dirección: ${formData.adress}
 SN: ${formData.serialNumber}
 `;
@@ -30,20 +30,14 @@ SN: ${formData.serialNumber}
 
         <div>
           <p>
-            Puertos: {formData.fsp.f} / {formData.fsp.s} / {formData.fsp.p}
+            Puertos: {formData.ports}
           </p>
           <p>Fecha y hora: {formData.dateTime}</p>
           <p>
-            Coordenadas: {formData.coordinates.x}, {formData.coordinates.y}
-          </p>
+            Coordenadas: {formData.coordinates}          </p>
           <p>Dirección: {formData.adress}</p>
           <p>SN: {formData.serialNumber}</p>
-          {/* <p>
-            Tarea:{" "}
-            <a href={formData.ticketUrl} target="_blank">
-              {formData.ticketUrl}
-            </a>
-          </p> */}
+   
         </div>
       </div>
       <button

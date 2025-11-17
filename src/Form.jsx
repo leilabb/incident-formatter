@@ -159,9 +159,9 @@ export default function Form({ formData, handleChange }) {
           </label>
           <div className="flex">
             <input
-              name="puertos"
+              name="ports"
               type="text"
-              id="puertos"
+              id="ports"
               placeholder="f/s/p"
               onChange={(event) => {
                 handleChange(event);
@@ -210,7 +210,7 @@ export default function Form({ formData, handleChange }) {
             onChange={(event) => {
               handleChange(event);
             }}
-            className=" px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="md:w-46 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
       </div>
