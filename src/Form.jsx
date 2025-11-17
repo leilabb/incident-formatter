@@ -67,7 +67,7 @@ export default function Form({ formData, handleChange }) {
       </div>
 
       {/*  Zona & GPON */}
-      <div className=" flex gap-6 w-full">
+      <div className="flex gap-6 w-full">
         <div
           className="mb-6"
           onChange={(event) => {
@@ -116,8 +116,8 @@ export default function Form({ formData, handleChange }) {
       </div>
 
       {/*  Dirección y fecha/hora */}
-      <div className="flex flex-row mb-6 ">
-        <div className=" md:w-46 flex flex-col">
+      <div className="flex md:w-46 mb-6">
+        <div className="flex flex-col">
           <label className="text-left text-sm font-medium text-gray-700 mb-2">
             Fecha y hora
           </label>
@@ -128,7 +128,7 @@ export default function Form({ formData, handleChange }) {
             onChange={(event) => {
               handleChange(event);
             }}
-            className=" px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="md:w-46 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
         <div className="md:ml-6 flex flex-col">
@@ -152,75 +152,42 @@ export default function Form({ formData, handleChange }) {
       </div>
 
       {/* Puertos y coordenadas */}
-      <div className="mb-6 flex ">
-        <div className="flex flex-col ">
+      <div className="mb-6 md:w-46 flex ">
+        <div className="flex flex-col">
           <label className="text-left block text-sm font-medium text-gray-700 mb-2">
             Puertos
           </label>
           <div className="flex">
             <input
-              name="f"
+              name="puertos"
               type="text"
-              id="puerto1"
-              placeholder="f"
+              id="puertos"
+              placeholder="f/s/p"
               onChange={(event) => {
                 handleChange(event);
               }}
-              className="md:w-12 mr-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            />
-            <span className="flex items-center text-gray-500">/</span>
-            <input
-              name="s"
-              type="text"
-              id="puerto2"
-              placeholder="s"
-              onChange={(event) => {
-                handleChange(event);
-              }}
-              className="md:w-12 mr-1 ml-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            />
-            <span className="flex items-center text-gray-500">/</span>
-            <input
-              name="p"
-              type="text"
-              id="puerto3"
-              placeholder="p"
-              onChange={(event) => {
-                handleChange(event);
-              }}
-              className="md:w-12 px-3 ml-1 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="md:w-46 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
         </div>
 
-        <div className="md:ml-10 flex flex-col">
+        <div className="md:ml-6 flex flex-col">
           <label className="text-left block text-sm font-medium text-gray-700 mb-2">
             Coordenadas{" "}
             <a href="https://www.userside.eu/en" target="_blank">
               <span className="text-xs">Userside</span>
             </a>
           </label>
-          <div className="flex ">
+          <div className="flex">
             <input
-              name="x"
+              name="coordinates"
               type="text"
-              id="coord1"
-              placeholder="x"
-              onChange={(event) => {
+              id="coordinates"
+              placeholder="x,y"
+               onChange={(event) => {
                 handleChange(event);
               }}
-              className=" md:w-24 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            />
-            <span className="flex items-center text-gray-500">,</span>
-            <input
-              name="y"
-              type="text"
-              id="coord2"
-              placeholder="y"
-              onChange={(event) => {
-                handleChange(event);
-              }}
-              className="md:w-24 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
         </div>
@@ -247,31 +214,7 @@ export default function Form({ formData, handleChange }) {
           />
         </div>
       </div>
-      {/* <!-- Tarea --> */}
-      {/* <div className="flex flex-col">
-        <label
-          for="tarea"
-          className="text-left block text-sm font-medium text-gray-700 mb-2"
-        >
-          Tarea
-        </label>
-        <textarea
-          name="ticketUrl"
-          id="tarea"
-          rows="1"
-          placeholder="Enlace tarea"
-          onChange={(event) => {
-            handleChange(event);
-          }}
-          className="w-80 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none"
-        ></textarea>
-        <button
-          id="format-btn"
-          className="bg-black w-fit mt-2 text-white font-medium py-3 px-4 rounded-md"
-        >
-          Enviar a chat de Averías
-        </button>
-      </div> */}
+  
     </div>
   );
 }

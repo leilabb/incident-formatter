@@ -10,41 +10,21 @@ export default function App() {
     zone: "",
     affected: "",
     gpon: "",
-    fsp: { f: 0, s: 0, p: 0 },
+    fsp: "",
     dateTime: "",
-    coordinates: { x: "", y: "" },
+    coordinates: "",
     adress: "",
     serialNumber: "",
     ticketUrl: "",
   });
 
   function handleChange(event) {
-    const { value, name } = event.target;
-    if (name === "f" || name === "s" || name === "p") {
-      setFormData((prev) => ({
-        ...prev,
-        fsp: {
-          ...prev.fsp,
-          [name]: value,
-        },
-      }));
-    } else if (name === "x" || name === "y") {
-      setFormData((prev) => ({
-        ...prev,
-        coordinates: {
-          ...prev.coordinates,
-          [name]: value,
-        },
-      }));
-    } else {
+    const { value, name } = event.target;  
       setFormData((prev) => ({
         ...prev,
         [name]: value,
       }));
-      // console.log(JSON.stringify(formData, null, 2));
-    }
   }
-
 
   return (
       <div>
