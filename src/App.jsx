@@ -10,7 +10,7 @@ export default function App() {
     zone: "",
     affected: "",
     gpon: "",
-    fsp: "",
+    equipo: "",
     dateTime: "",
     coordinates: "",
     adress: "",

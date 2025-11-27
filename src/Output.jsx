@@ -5,11 +5,11 @@ export default function Output({ formData }) {
 
   function copyNumber() {
     const formDataToCopy = `LOS ROJO ${formData.type} ${formData.gpon} -  ZONA ${formData.zone} ${formData.affected} CLIENTES AFECTADOS
-Puertos: ${formData.ports},
-Fecha y hora: ${formData.dateTime},
-Coordenadas: ${formData.coordinates}, 
-Dirección: ${formData.adress}
-SN: ${formData.serialNumber}
+${formData.affected} caídos desde: ${formData.dateTime},
+Coordenadas: ${formData.coordinates}
+Localizada en: ${formData.adress}
+SN del cliente: ${formData.serialNumber}
+Equipo:${formData.equipo}
 `;
 
     navigator.clipboard.writeText(formDataToCopy);
@@ -22,21 +22,19 @@ SN: ${formData.serialNumber}
       <div className="border rounded-xl p-10 ">
         <h2>
           LOS ROJO <span className="font-bold">{formData.type}</span> -
-          <span className="font-bold">{formData.gpon} </span>ZONA{" "}
+          <span className="font-bold">{formData.gpon}{" "}</span>ZONA{" "}
           <span className="font-bold">{formData.zone}</span>
           {""} <span className="font-bold"> {formData.affected} </span>CLIENTES
           AFECTADOS
         </h2>
 
         <div>
-          <p>
-            Puertos: {formData.ports}
-          </p>
-          <p>Fecha y hora: {formData.dateTime}</p>
+                  <p>{formData.affected} caídos desde: {formData.dateTime}</p>
           <p>
             Coordenadas: {formData.coordinates}          </p>
-          <p>Dirección: {formData.adress}</p>
-          <p>SN: {formData.serialNumber}</p>
+          <p>Localizada en: {formData.adress}</p>
+          <p>SN del cliente: {formData.serialNumber}</p>
+          <p>Equipo: {formData.equipo}</p>
    
         </div>
       </div>

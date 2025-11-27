@@ -101,7 +101,7 @@ export default function Form({ formData, handleChange }) {
 
         <div className="flex flex-col">
           <label className="text-left text-sm font-medium text-gray-700 mb-2">
-            GPON{" "}
+            GPON y puertos{" "}
           </label>
           <input
             name="gpon"
@@ -151,18 +151,18 @@ export default function Form({ formData, handleChange }) {
         </div>
       </div>
 
-      {/* Puertos y coordenadas */}
+      {/* Equipo y coordenadas */}
       <div className="mb-6 md:w-46 flex ">
         <div className="flex flex-col">
           <label className="text-left block text-sm font-medium text-gray-700 mb-2">
-            Puertos
+            Equipo
           </label>
           <div className="flex">
             <input
-              name="ports"
+              name="equipo"
               type="text"
-              id="ports"
-              placeholder="f/s/p"
+              id="equipo"
+              placeholder="Ejemplo: ´Montaje´"
               onChange={(event) => {
                 handleChange(event);
               }}
