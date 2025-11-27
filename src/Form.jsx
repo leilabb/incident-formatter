@@ -8,6 +8,8 @@ export default function Form({ formData, handleChange }) {
     "HUELVA",
   ];
   const tipos = ["D2", "C3"];
+  const urls = {Userside:"https://us.olivenet.es/oper/", 
+    Mapa:"https://www.google.com/maps/d/viewer?mid=1Mr7y1WunzvzfIGMpmjtWRC-UQLznNFs&amp%3Bfemb=1&amp%3Bll=36.228552326815134%2C-5.1502587362347825&amp%3Bz=11&ll=36.71918690608552%2C-4.617996648045004&z=19"}
 
   return (
     <div className="">
@@ -79,7 +81,7 @@ export default function Form({ formData, handleChange }) {
             className="block text-left text-sm font-medium text-gray-700 mb-2"
           >
             Zona{" "}
-            <a href="https://maps.google.com/" target="_blank">
+            <a href={urls.Mapa} target="_blank">
               <span className="text-xs">Mapa</span>
             </a>
           </label>
@@ -174,7 +176,7 @@ export default function Form({ formData, handleChange }) {
         <div className="md:ml-6 flex flex-col">
           <label className="text-left block text-sm font-medium text-gray-700 mb-2">
             Coordenadas{" "}
-            <a href="https://www.userside.eu/en" target="_blank">
+            <a href={urls.Userside} target="_blank">
               <span className="text-xs">Userside</span>
             </a>
           </label>
