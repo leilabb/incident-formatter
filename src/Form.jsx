@@ -6,6 +6,7 @@ export default function Form({ formData, handleChange }) {
     "ALGECIRAS",
     "FUENGIROLA",
     "HUELVA",
+    "CHICLANA"
   ];
   const tipos = ["D2", "C3"];
   const urls = {Userside:"https://us.olivenet.es/oper/", 

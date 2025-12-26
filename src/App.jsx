@@ -1,4 +1,3 @@
-import "./App.css";
 import Form from "./Form.jsx";
 import Output from "./Output.jsx";
 import { useState } from "react";

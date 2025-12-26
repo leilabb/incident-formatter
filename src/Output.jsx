@@ -22,20 +22,20 @@ Equipo:${formData.equipo}
       <div className="border rounded-xl p-10 ">
         <h2>
           LOS ROJO <span className="font-bold">{formData.type}</span> -
-          <span className="font-bold">{formData.gpon}{" "}</span>ZONA{" "}
+          <span className="font-bold">{formData.gpon} </span>ZONA{" "}
           <span className="font-bold">{formData.zone}</span>
           {""} <span className="font-bold"> {formData.affected} </span>CLIENTES
           AFECTADOS
         </h2>
 
         <div>
-                  <p>{formData.affected} caídos desde: {formData.dateTime}</p>
           <p>
-            Coordenadas: {formData.coordinates}          </p>
+            {formData.affected} caídos desde: {formData.dateTime}
+          </p>
+          <p>Coordenadas: {formData.coordinates} </p>
           <p>Localizada en: {formData.adress}</p>
           <p>SN del cliente: {formData.serialNumber}</p>
           <p>Equipo: {formData.equipo}</p>
-   
         </div>
       </div>
       <button
