@@ -5,7 +5,7 @@ export default function Output({ formData }) {
 
   function copyNumber() {
     const formDataToCopy = `LOS ROJO ${formData.type} ${formData.gpon} -  ZONA ${formData.zone} ${formData.affected} CLIENTES AFECTADOS
-${formData.affected} caídos desde: ${formData.dateTime},
+Caídos desde: ${formData.dateTime},
 Coordenadas: ${formData.coordinates}
 Localizada en: ${formData.adress}
 SN del cliente: ${formData.serialNumber}
@@ -30,7 +30,7 @@ Equipo:${formData.equipo}
 
         <div>
           <p>
-            {formData.affected} caídos desde: {formData.dateTime}
+            Caídos desde: {formData.dateTime}
           </p>
           <p>Coordenadas: {formData.coordinates} </p>
           <p>Localizada en: {formData.adress}</p>
