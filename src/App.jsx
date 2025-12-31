@@ -27,12 +27,12 @@ export default function App() {
 
   return (
       <div>
-      <div className="max-w-[1280px] mx-auto p-8 my-12">
-        <div className="w-full flex justify-between">
-          <div className="w-1/2">
+      <div className="md:max-w-[1280px] mx-auto p-8 my-12">
+        <div className="w-full md:flex md:flex-row flex flex-col justify-between">
+          <div className="md:w-1/2">
             <Form formData={formData} handleChange={handleChange} />
           </div>
-          <div className="w-1/2">
+          <div className="md:w-1/2">
             <Output formData={formData} />
           </div>
         </div>

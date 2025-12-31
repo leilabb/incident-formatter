@@ -19,7 +19,7 @@ Equipo:${formData.equipo}
 
   return (
     <div className="">
-      <div className="border rounded-xl p-10 ">
+      <div className="border rounded-xl p-10">
         <h2>
           LOS ROJO <span className="font-bold">{formData.type}</span> -
           <span className="font-bold">{formData.gpon} </span>ZONA{" "}
@@ -42,7 +42,7 @@ Equipo:${formData.equipo}
         id="format-btn"
         className={`${
           copied ? "bg-green-600" : "bg-black"
-        } mt-2 w-1/4 text-white font-medium py-3 px-4 rounded-md`}
+        } mt-4 mb-4 md:mt-2 w-full md:w-1/4 text-white font-medium py-3 px-4 rounded-md`}
         onClick={() => !copied && copyNumber()}
       >
         {copied ? "Copiado!" : "Copiar"}

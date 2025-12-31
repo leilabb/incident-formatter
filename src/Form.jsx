@@ -15,8 +15,8 @@ export default function Form({ formData, handleChange }) {
   return (
     <div className="">
       {/*  Tipo & clientes afectados */}
-      <div className="flex mb-6 md:w-full md:gap-6">
-        <div className="flex flex-col w-fit ">
+      <div className="flex flex-col w-full md:flex md:flex-row mb-6 md:w-full md:gap-6">
+        <div className="md:flex md:flex-col w-full md:w-fit ">
           <label className="text-left block text-sm font-medium text-gray-700 mb-2">
             Tipo
           </label>
@@ -30,7 +30,7 @@ export default function Form({ formData, handleChange }) {
               {tipos.map((tipo) => {
                 return (
                   <div>
-                    <span className=" text-gray-700">{tipo}</span>
+                    <span className="text-gray-700">{tipo}</span>
                     <input
                       type="radio"
                       name="type"
@@ -63,14 +63,14 @@ export default function Form({ formData, handleChange }) {
             id="affected"
             min="0"
             placeholder="N de clientes"
-            className="md:w-fit px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="md:w-fit w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
        
       </div>
 
       {/*  Zona & GPON */}
-      <div className="flex gap-6 w-full">
+      <div className="md:flex gap-6 w-full">
         <div
           className="mb-6"
           onChange={(event) => {
@@ -89,7 +89,7 @@ export default function Form({ formData, handleChange }) {
           <select
             id="zone"
             name="zone"
-            className="md:w-46 px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="md:w-46 w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           >
             <option value="" className="text-center">Seleccionar zona</option>
             {zones.map((zone) => {
@@ -119,7 +119,7 @@ export default function Form({ formData, handleChange }) {
       </div>
 
       {/*  Dirección y fecha/hora */}
-      <div className="flex md:w-46 mb-6">
+      <div className="md:flex md:w-46 mb-6">
         <div className="flex flex-col">
           <label className="text-left text-sm font-medium text-gray-700 mb-2">
             Fecha y hora
@@ -155,7 +155,7 @@ export default function Form({ formData, handleChange }) {
       </div>
 
       {/* Equipo y coordenadas */}
-      <div className="mb-6 md:w-46 flex ">
+      <div className="mb-6 md:w-46 md:flex ">
         <div className="flex flex-col">
           <label className="text-left block text-sm font-medium text-gray-700 mb-2">
             Equipo
@@ -169,7 +169,7 @@ export default function Form({ formData, handleChange }) {
               onChange={(event) => {
                 handleChange(event);
               }}
-              className="md:w-46 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="md:w-46 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
         </div>
@@ -190,18 +190,17 @@ export default function Form({ formData, handleChange }) {
                onChange={(event) => {
                 handleChange(event);
               }}
-              className="px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full md:w-50 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
         </div>
       </div>
 
       {/* <!-- S/N --> */}
-      <div className="mb-6 flex space-x-6">
-        <div className="flex flex-col">
+      <div className="mb-6 flex w-full">
+        <div className="flex flex-col w-full">
           <label
-            for="sn"
-            className="text-left  block text-sm font-medium text-gray-700 mb-2"
+            className="text-left block text-sm font-medium text-gray-700 mb-2"
           >
             SN
           </label>
@@ -213,11 +212,10 @@ export default function Form({ formData, handleChange }) {
             onChange={(event) => {
               handleChange(event);
             }}
-            className="md:w-46 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="md:w-46 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
       </div>
-  
     </div>
   );
 }
